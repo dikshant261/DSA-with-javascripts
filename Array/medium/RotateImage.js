@@ -1,23 +1,23 @@
-const rotateImage = (image) => {
-    let row = image.length;
-    let col = image[0].length;
+const rotatematrix = (matrix) => {
+    let row = matrix.length;
+    let col = matrix[0].length;
 
     for (let i = 0; i < row; i++) {
         for (let j = i + 1; j < col; j++) {
-            temp = image[i][j];
-            image[i][j] = image[j][i];
-            image[j][i] = temp;
+            temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
         }
     }
     for (let i = 0; i < row; i++) {
         for (let j = 0; j < col / 2; j++) {
-            temp = image[i][j];
-            image[i][j] = image[i][col - j - 1];
-            image[i][col - j - 1] = temp;
+            temp = matrix[i][j];
+            matrix[i][j] = matrix[i][col - j - 1];
+            matrix[i][col - j - 1] = temp;
         }
     }
-    return image;
+    return matrix;
 }
-const image = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-console.log("transposed image: ", rotateImage(image));
+console.log("transposed matrix: ", rotatematrix(matrix));
